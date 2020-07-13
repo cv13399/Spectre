@@ -1,0 +1,26 @@
+/*-------- start section spacing --------*/
+.section-space {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    // responsive
+    @media #{$sm-device} {
+        padding-top: 62px;
+        padding-bottom: 62px;
+    }
+}
+.mb-30 {
+    margin-bottom: 30px;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+.mb-20 {
+    margin-bottom: 20px;
+}
+.mt-30 {
+    margin-top: 30px;
+}
+.mbn-30 {
+    margin-bottom: -30px;
+}
+/*-------- end section spacing --------*/

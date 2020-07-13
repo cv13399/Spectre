@@ -1,0 +1,121 @@
+/*------ top store style start ------*/
+.banner {
+    &-item {
+        position: relative;
+        &:hover {
+            .banner-thumb {
+                img {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+    &-thumb {
+        img {
+            width: 100%;
+        }
+    }
+    &-content {
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        padding: 45px;
+        position: absolute;
+        pointer-events: none;
+        // responsive
+        @media #{$lg-device} {
+            padding: 35px;
+        }
+        @media #{$md-device} {
+            padding: 20px;
+        }
+        @media #{$sm-device} {
+            padding: 30px;
+        }
+        &-style_2 {
+            @media #{$xs-device} {
+                padding: 20px;
+            }
+        }
+        .text1 {
+            font-size: 14px;
+            color: $paragraph;
+            font-weight: 400;
+            line-height: 1;
+            padding-bottom: 10px;
+            text-transform: capitalize;
+        }
+        .text2 {
+            color: $black-soft;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1.2;
+            text-transform: capitalize;
+            // responsive
+            @media #{$md-device} {
+                font-size: 18px;
+            }
+            @media #{$sm-device} {
+                font-size: 20px;
+            } 
+        }
+        .text3 {
+            color: $black-soft;
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.2;
+            text-transform: capitalize;
+            // responsive
+            @media #{$md-device} {
+                font-size: 18px;
+            }   
+            @media #{$sm-device} {
+                font-size: 20px;
+            } 
+        }
+    }
+}
+/*------ top store style end ------*/
+
+.banner {
+    &-item {
+        &-height {
+            height: 250px;
+            // responsive
+            @media #{$md-device} {
+                height: 200px;
+            }
+            @media #{$sm-device} {
+                height: 150px;
+            }
+        }
+    }
+    &-content {
+        &--2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            height: 100%;
+            h2 {
+                font-size: 42px;
+                font-weight: 500;
+                line-height: 1.2;
+                color: $black-soft;
+                text-transform: capitalize;
+                // responsive
+                @media #{$sm-device} {
+                    font-size: 25px;
+                }
+                @media #{$xs-device} {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+/*------- static middle store1 start -------*/

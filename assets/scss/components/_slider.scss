@@ -1,0 +1,199 @@
+/*--------- hero slider start ---------*/
+.hero-slider {
+    &-item {
+        height: 510px;
+        display: flex;
+        align-items: center;
+        // responsive
+        @media #{$md-device} {
+            height: 400px;
+        }
+        @media #{$sm-device} {
+            height: 370px;
+        }
+    }
+    &-item_2 {
+        height: 100vh;
+        // responsive
+        @media #{$md-device} {
+            height: 400px;
+        }
+        @media #{$sm-device} {
+            height: 370px;
+        }
+    }
+    &-content {
+        h4 {
+            color: $paragraph;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.2;
+            padding-bottom: 5px;
+            text-transform: capitalize;
+        }
+        h1,
+        h2 {
+            color: $black-soft;
+            font-size: 60px;
+            font-weight: 400;
+            line-height: 1.1;
+            text-transform: capitalize;
+            // responsive
+            @media #{$md-device} {
+                font-size: 45px;
+            }
+            @media #{$sm-device} {
+                font-size: 32px;
+            }
+        }
+        p {
+            color: $paragraph;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.6;
+            padding-top: 20px;
+            padding-bottom: 30px;
+            text-transform: capitalize;
+            // responsive
+            @media #{$sm-device} {
+                padding-top: 15px;
+                padding-bottom: 0;
+            }
+        }
+        .btn-hero,
+        .btn-outline {
+            margin-top: 25px;
+        }
+        &_2,
+        &_3 {
+            margin-top: 80px;
+            // responsive
+            @media #{$sm-device} {
+                margin-top: 50px;
+            }
+            h1 {
+                font-size: 70px;
+                letter-spacing: -3px;
+                padding-bottom: 10px;
+                // responsive
+                @media #{$sm-device} {
+                    font-size: 36px;
+                    letter-spacing: normal;
+                }
+                @media #{$xs-device} {
+                    font-size: 24px;
+                }
+            }
+            h5,
+            p {
+                font-size: 18px;
+                font-weight: 300;
+                color: $theme-color;
+                text-transform: capitalize;
+                // responsive
+                @media #{$xs-device} {
+                    font-size: 16px;
+                }
+            }
+            p {
+                color: $black-soft;
+            }
+        }
+        &_3 {
+            margin-top: 0;
+            padding: 0 100px;
+            // responsive
+            @media #{$md-device} {
+                padding: 0 30px;
+            }
+            @media #{$sm-device} {
+                padding: 0 100px 0 30px;
+            }
+            @media #{$xxs-device} {
+                padding: 0 15px;
+            }
+            h1 {
+                font-size: 60px;
+                // responsive
+                @media #{$sm-device} {
+                    font-size: 36px;
+                    letter-spacing: normal;
+                }
+                @media #{$xs-device} {
+                    font-size: 28px;
+                }
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}
+/*------ hero slider for home 4 end ------*/
+
+// slider text animation
+.slick-active {
+    .hero-slider-content {
+        &.slide-1 {
+            h1 {
+                animation: bounceIn 2s linear alternate; 
+            }
+            h2 {
+                animation: bounceIn 2s linear alternate;
+            }
+            h4 {
+                animation: zoomIn 1s linear alternate;
+            }
+            h5 {
+                animation: zoomIn 1s linear alternate;
+            }
+            p {
+                animation: fadeInRight 1.5s linear alternate;
+            }
+            a {
+                animation: slideInUp 0.5s linear alternate; 
+            }
+        } 
+        &.slide-2 {
+            h1 {
+                animation: rotateInDownLeft 2s linear alternate; 
+            }
+            h2 {
+                animation: fadeInRight 1.5s linear alternate;
+            }
+            h4 {
+                animation: fadeInLeft 1s linear alternate;
+            }
+            h5 {
+                animation: zoomIn 1s linear alternate;
+            }
+            p {
+                animation: fadeInRight 1.5s linear alternate;
+            }
+            a {
+                animation: slideInUp 0.5s linear alternate; 
+            }
+        }
+        &.slide-3 {
+            h1 {
+                animation: fadeInLeft 800ms linear alternate; 
+            }
+            h2 {
+                animation: fadeInUp 1000ms linear alternate;
+            }
+            h4 {
+                animation: fadeInRight 600ms linear alternate;
+            }
+            h5 {
+                animation: zoomIn 1s linear alternate;
+            }
+            p {
+                animation: fadeInRight 1.5s linear alternate;
+            }
+            a {
+                animation: fadeInUp 1400ms linear alternate; 
+            }
+        }
+    }
+}
+
