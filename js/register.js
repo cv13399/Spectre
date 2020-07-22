@@ -33,8 +33,6 @@ $(document).ready(function() {
 		return true
 	}
 
-	console.log("register page is working")
-
 // https://0vmdbx6mda.execute-api.ap-southeast-1.amazonaws.com/test/register/%7Bname%7D/%7Baccount%7D/%7Bpassword%7D/%7Bphone
 	$("#registerButton").on('click', function() {
 		let userRegisterName = $("#userName").val();
