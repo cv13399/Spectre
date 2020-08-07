@@ -19,7 +19,7 @@ $(document).ready(function() {
 		    console.log(data);
 		    console.log(this.responseText);
 		};
-		xobj.send(body);
+		xobj.send(JSON.stringify(body));
 		return true
 	}
 
