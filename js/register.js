@@ -5,19 +5,14 @@ $(document).ready(function() {
 		var AWS_registerUrl = "https://0vmdbx6mda.execute-api.ap-southeast-1.amazonaws.com/test/register/"
 
 		let xobj = new XMLHttpRequest();
-		xobj.onreadystatechange = function(){
-			if(this.readyState === 4){
-				console.log(this.responseText);
-			}
-		};
 
 		xobj.open('post', AWS_registerUrl);
 		xobj.setRequestHeader('Content-type', 'application/json');
 
 		xobj.onload = function (data){
 		    // do something to response
-		    console.log(data);
-		    console.log(this.responseText);
+		    console.log("Post success")
+		    console.log(this.responseText);		    
 		};
 		xobj.send(JSON.stringify(body));
 		return true
