@@ -533,12 +533,15 @@
                             </div> -->
                             <div class="login-reg-form-wrap sign-up-form">
                                 <h2>Sign-Up Form</h2>
-                                <form action="#" method="POST">
+                                <form action="#" method="POST" onclick="return false">
+                                    <div class="single-input-item">
+                                        <input id="userEmail" type="email" placeholder="Enter your Email" required />
+                                    </div>
                                     <div class="single-input-item">
                                         <input id="userName" type="text" placeholder="Full Name" required />
                                     </div>
                                     <div class="single-input-item">
-                                        <input id="userEmail" type="email" placeholder="Enter your Email" required />
+                                        <input id="userPhone" type="tel" placeholder="Phone number" required />
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-6">
@@ -552,7 +555,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="single-input-item">
+                                    <!-- <div class="single-input-item">
                                         <div class="login-reg-form-meta">
                                             <div class="remember-meta">
                                                 <div class="custom-control custom-checkbox">
@@ -562,9 +565,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="single-input-item">
-                                        <button id=registerButton class="btn btn__bg">Register</button>
+                                        <button id=registerButton type="submit" class="btn btn__bg">Register</button>
                                     </div>
                                 </form>
                             </div>

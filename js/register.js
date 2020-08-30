@@ -17,35 +17,34 @@ $(document).ready(function() {
 		return true
 	}
 
-// https://0vmdbx6mda.execute-api.ap-southeast-1.amazonaws.com/test/register/%7Bname%7D/%7Baccount%7D/%7Bpassword%7D/%7Bphone
 	$("#registerButton").on('click', function() {
 		let userRegisterName = $("#userName").val();
+		let userRegisterPhone = $("#userPhone").val();
 		let userRegisterEmail = $("#userEmail").val();
 		let userRegisterPassword = $("#userPassword").val();
 		// let userRegisterPasswordRepeat = $("#userPasswordRepeat").val();
-		let userPhone = "098843637637"
 
 		let userBody = {
-			"name": userRegisterName,
 			"account": userRegisterEmail,
+			"name": userRegisterName,
 			"password": userRegisterPassword,
-			"phone":userPhone
+			"phone": userRegisterPhone,
 		}
 
 		console.log("userBody: ",userBody)
 		sendUserToAWS(userBody, "https://0vmdbx6mda.execute-api.ap-southeast-1.amazonaws.com/test/register");
 	})
 
-	$("#registerButton").on('click', function() {
-		let userRegisterEmail = $("#sign_in_user_name").val();
-		let userRegisterPassword = $("#sign_in_user_password").val();
+	// $("#registerButton").on('click', function() {
+	// 	let userRegisterEmail = $("#sign_in_user_name").val();
+	// 	let userRegisterPassword = $("#sign_in_user_password").val();
 
-		let userBody = {
-			"account": userRegisterEmail,
-			"password": userRegisterPassword,
-		}
+	// 	let userBody = {
+	// 		"account": userRegisterEmail,
+	// 		"password": userRegisterPassword,
+	// 	}
 
-		console.log("userBody: ",userBody)
-		sendUserToAWS(userBody, "https://0vmdbx6mda.execute-api.ap-southeast-1.amazonaws.com/test/login");
-	})
+	// 	console.log("userBody: ",userBody)
+	// 	sendUserToAWS(userBody, "https://0vmdbx6mda.execute-api.ap-southeast-1.amazonaws.com/test/login");
+	// })
 })
