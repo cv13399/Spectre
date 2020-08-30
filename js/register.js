@@ -33,6 +33,12 @@ $(document).ready(function() {
 
 		console.log("userBody: ",userBody)
 		sendUserToAWS(userBody, "https://0vmdbx6mda.execute-api.ap-southeast-1.amazonaws.com/test/register");
+
+		xobj.onload = function() {
+			var callbackData = JSON.parse(xobj.responseText);
+			// Get respon text here
+			console.log(callbackData);
+		}
 	})
 
 	// $("#registerButton").on('click', function() {
