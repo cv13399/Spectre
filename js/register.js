@@ -1,9 +1,10 @@
 
 $(document).ready(function() {
 
+	let xobj = new XMLHttpRequest();
+	
 	function sendUserToAWS(body, url) {
 
-		let xobj = new XMLHttpRequest();
 
 		xobj.open('post', url);
 		xobj.setRequestHeader('Content-type', 'application/json');
@@ -41,16 +42,22 @@ $(document).ready(function() {
 		}
 	})
 
-	// $("#registerButton").on('click', function() {
-	// 	let userRegisterEmail = $("#sign_in_user_name").val();
-	// 	let userRegisterPassword = $("#sign_in_user_password").val();
+	$("#loginButton").on('click', function() {
+		let userRegisterEmail = $("#sign_in_user_name").val();
+		let userRegisterPassword = $("#sign_in_user_password").val();
 
-	// 	let userBody = {
-	// 		"account": userRegisterEmail,
-	// 		"password": userRegisterPassword,
-	// 	}
+		let userBody = {
+			"account": userRegisterEmail,
+			"password": userRegisterPassword,
+		}
 
-	// 	console.log("userBody: ",userBody)
-	// 	sendUserToAWS(userBody, "https://0vmdbx6mda.execute-api.ap-southeast-1.amazonaws.com/test/login");
-	// })
+		// console.log("userBody: ",userBody)
+		sendUserToAWS(userBody, "https://0vmdbx6mda.execute-api.ap-southeast-1.amazonaws.com/test/login");
+
+		xobj.onload = function() {
+			var callbackData = JSON.parse(xobj.responseText);
+			// Get respon text here
+			console.log(callbackData);
+		}
+	})
 })
