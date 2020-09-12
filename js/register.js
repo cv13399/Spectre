@@ -1,3 +1,5 @@
+let account = "";
+let password = "";
 
 $(document).ready(function() {
 
@@ -16,6 +18,10 @@ $(document).ready(function() {
 		};
 		xobj.send(JSON.stringify(body));
 		return true
+	}
+
+	function getUserData(uid, account){
+
 	}
 
 	$("#registerButton").on('click', function() {
@@ -55,9 +61,17 @@ $(document).ready(function() {
 		sendUserToAWS(userBody, "https://0vmdbx6mda.execute-api.ap-southeast-1.amazonaws.com/test/login");
 
 		xobj.onload = function() {
-			var callbackData = JSON.parse(xobj.responseText);
+			var response = JSON.parse(xobj.responseText);
 			// Get respon text here
-			console.log(callbackData);
+			console.log("login sucessfully!");
+			console.log(response);
+			console.log(response.body);
+			if (response.success) {
+				let body = response.body;
+				let data = JSON.parse(body);
+				console.log(data['UID']);
+				// 給ED用這個uid去call getuser 可以拿到使用者所有資料
+			}
 		}
 	})
 })
