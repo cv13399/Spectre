@@ -62,15 +62,24 @@ $(document).ready(function() {
 
 		xobj.onload = function() {
 			var response = JSON.parse(xobj.responseText);
+			// console.log("login sucessfully!");
 			// Get respon text here
-			console.log("login sucessfully!");
-			console.log(response);
-			console.log(response.body);
+			// console.log(response);
+			// console.log(response.body);
 			if (response.success) {
 				let body = response.body;
 				let data = JSON.parse(body);
-				console.log(data['UID']);
+				// console.log(data['UID']);
 				// 給ED用這個uid去call getuser 可以拿到使用者所有資料
+
+				var currentUser = localStorage.setItem("currentUser", data.name);
+				console.log("currentUser",currentUser);
+
+				window.location.href = "./my-account.html";
+
+			} else {
+				alert("Please Check you email or passowrd again");
+				window.location.reload();
 			}
 		}
 	})
