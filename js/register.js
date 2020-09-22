@@ -4,6 +4,7 @@ let password = "";
 $(document).ready(function() {
 
 	let xobj = new XMLHttpRequest();
+	let loadingPanel = $("#loading-panel");
 	
 	function sendUserToAWS(body, url) {
 
@@ -25,6 +26,8 @@ $(document).ready(function() {
 	}
 
 	$("#registerButton").on('click', function() {
+        // loadingPanel.removeClass('hide');
+
 		let userRegisterName = $("#userName").val();
 		let userRegisterPhone = $("#userPhone").val();
 		let userRegisterEmail = $("#userEmail").val();
@@ -42,9 +45,20 @@ $(document).ready(function() {
 		sendUserToAWS(userBody, "https://0vmdbx6mda.execute-api.ap-southeast-1.amazonaws.com/test/register");
 
 		xobj.onload = function() {
-			var callbackData = JSON.parse(xobj.responseText);
+			let response = JSON.parse(xobj.responseText);
 			// Get respon text here
-			console.log(callbackData);
+			console.log(response);
+
+			if (response.success) { 
+				loadingPanel.removeClass('hide');
+
+                setTimeout(function() {
+                    window.location.href = "./my-account.html";
+                },2000)
+			}  else {
+				alert("Please Check you data again!");
+				window.location.reload();
+			}
 		}
 	})
 
@@ -61,7 +75,7 @@ $(document).ready(function() {
 		sendUserToAWS(userBody, "https://0vmdbx6mda.execute-api.ap-southeast-1.amazonaws.com/test/login");
 
 		xobj.onload = function() {
-			var response = JSON.parse(xobj.responseText);
+			let response = JSON.parse(xobj.responseText);
 			// console.log("login sucessfully!");
 			// Get respon text here
 			// console.log(response);
@@ -69,13 +83,18 @@ $(document).ready(function() {
 			if (response.success) {
 				let body = response.body;
 				let data = JSON.parse(body);
+				loadingPanel.removeClass('hide');
+
+                setTimeout(function() {
+                    window.location.href = "./my-account.html";
+                },2000)
 				// console.log(data['UID']);
 				// 給ED用這個uid去call getuser 可以拿到使用者所有資料
 
-				var currentUser = localStorage.setItem("currentUser", data.name);
-				console.log("currentUser",currentUser);
+				// var currentUser = localStorage.setItem("currentUser", data.name);
+				// console.log("currentUser",currentUser);
 
-				window.location.href = "./my-account.html";
+				// window.location.href = "./my-account.html";
 
 			} else {
 				alert("Please Check you email or passowrd again");
