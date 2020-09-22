@@ -1,0 +1,40 @@
+.loading-page {
+  position: fixed;
+  z-index: 999;
+  left: 35%;
+  top: 35%;
+  width: 300px;
+  height: 250px;
+  border: 1px solid #D9D9D9;
+  background-color: #999;
+  border-radius: 10px; }
+
+.loaging-message {
+  font-size: 2em;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 10%; }
+
+.loading-animation {
+  margin: 10% auto;
+  text-align: center;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #34db77;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
+  animation: spin 2s linear infinite;
+  flex: none !important; }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+.hide {
+  display: none; }
+
+/*# sourceMappingURL=styles.css.map */
